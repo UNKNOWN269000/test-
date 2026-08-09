@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* Site Background - Dark */
+html, body {
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+}
+
+/* Liquid Background Animation */
+.liquid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+}
+
+.liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.8;
+  animation: float 8s ease-in-out infinite;
+}
+
+.liquid-blob-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #00ff00, #00cc00);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+  box-shadow: 0 0 150px 50px rgba(0, 255, 0, 0.5);
+}
+
+.liquid-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #000000, #003366);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: -2s;
+  box-shadow: 0 0 150px 50px rgba(0, 51, 102, 0.5);
+}
+
+.liquid-blob-3 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #00ff00, #00cc00);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -4s;
+  box-shadow: 0 0 150px 50px rgba(0, 255, 0, 0.4);
+}
+
+.liquid-blob-4 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #00ff00, #00cc00);
+  top: 20%;
+  right: 10%;
+  animation-delay: -6s;
+  box-shadow: 0 0 150px 50px rgba(0, 255, 0, 0.5);
+}
+
+.liquid-blob-5 {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, #87ceeb, #00bfff);
+  bottom: 30%;
+  left: 15%;
+  animation-delay: -3s;
+  box-shadow: 0 0 150px 50px rgba(135, 206, 235, 0.5);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1) rotate(90deg);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9) rotate(180deg);
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.05) rotate(270deg);
+  }
+}
+
+/* Wave animation at bottom */
+.wave-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230066ff' fill-opacity='0.2' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 50% 100%;
+  animation: wave-animation 10s linear infinite;
+  filter: blur(20px);
+}
+
+.wave-2 {
+  bottom: 10px;
+  animation: wave-animation 15s linear infinite reverse;
+  opacity: 0.5;
+}
+
+.wave-3 {
+  bottom: 20px;
+  animation: wave-animation 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Button ripple animation */
+@keyframes btn-ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #475569;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
+
+.scrollbar-track-slate-100::-webkit-scrollbar-track {
+  background-color: #f1f5f9;
+}
+
+.dark .scrollbar-track-slate-800::-webkit-scrollbar-track {
+  background-color: #1e293b;
+}
+
+/* Glass morphism header */
+.glass-header {
+  background: rgba(10, 26, 46, 0.4);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 16px;
+  margin: 16px;
+  box-shadow: 0 8px 32px rgba(0, 255, 0, 0.15);
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass morphism button */
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
+}
